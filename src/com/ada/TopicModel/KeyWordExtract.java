@@ -1,8 +1,5 @@
 package com.ada.TopicModel;
 
-import jdk.nashorn.internal.ir.LiteralNode;
-
-import java.awt.image.AreaAveragingScaleFilter;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -12,11 +9,13 @@ import java.util.Random;
 
 public class KeyWordExtract {
     private static String[] POG;
-    private static String dictionary = "街路号里区边";
-    private static double initRadit = 0.5;
+    private static String dictionary;
+    private static double initRadit;
     private final int flagCompare = 2;
 
     KeyWordExtract() {
+        dictionary = "街路号里区边";
+        initRadit = 0.5;
     }
 
     KeyWordExtract(String[] pog, String dic, double ir) {
@@ -37,6 +36,7 @@ public class KeyWordExtract {
             return true;
         return false;
     }
+
     boolean isRightBracket(char c) {
         if(c == '）' || c == ')')
             return true;
@@ -139,7 +139,7 @@ public class KeyWordExtract {
         for(int i = 0; i < sampleNumber; i++) {
             int randomIndex1 = Math.abs(random.nextInt()) % POG.length;
             int randomIndex2 = Math.abs(random.nextInt()) % POG.length;
-            System.out.println("random1: " + randomIndex1 + " " + "radom2: " + randomIndex2);
+//            System.out.println("random1: " + randomIndex1 + " " + "radom2: " + randomIndex2);
             String sampleString1 = POG[randomIndex1];
             String sampleString2 = POG[randomIndex2];
 
