@@ -19,6 +19,11 @@ public class TopicExtract {
                 new FileOutputStream(file), "UTF-8"));
         writer.write("var POGkw = new Array();\n");
 
+        File file1 = new File("label.txt");
+        BufferedWriter writer1 = new BufferedWriter(new OutputStreamWriter(
+                new FileOutputStream(file1), "UTF-8"));
+        writer1.write("var label = new Array();\n");
+
         String dictionary = new String("街路号里营区门环");
         double initRadio = 0.5;
         DataRead dr = new DataRead();
@@ -32,12 +37,22 @@ public class TopicExtract {
             String kw = test.keyWord();
             writer.write("POGkw[" + i + "] = [" + dr.logLat[i][0] + ", " + dr.logLat[i][1] + ", '" + kw +  "'];\n");
 
-//            for(int j = 0; j < POGList.get(i).length; j++) {
+            writer1.write("label[" + i + "] = [");
+            for(int j = 1; j < dr.lable[i].length; j++) {
+                if(dr.lable[i][j] != -1)
+                    writer1.write(dr.lable[i][j - 1] + ", ");
+                else {
+                    writer1.write(dr.lable[i][j - 1] + "];\n");
+                   break;
+                }
+            }
+////            for(int j = 0; j < POGList.get(i).length; j++) {
 //                System.out.println("info[" + i + "][" + j + "]:" + POGList.get(i)[j]);
 //                count++;
 //            }
         }
         writer.close();
+        writer1.close();
         System.out.println(count);
     }
 }
