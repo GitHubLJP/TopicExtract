@@ -1,8 +1,5 @@
 package com.ada.TopicModel;
 
-import com.sun.org.apache.xerces.internal.util.SynchronizedSymbolTable;
-import com.sun.org.apache.xml.internal.serializer.utils.SystemIDResolver;
-
 import java.io.*;
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -16,19 +13,32 @@ import java.util.List;
  */
 
 class DataRead {
-    private static String INFO_PATH = "result.txt";
-    //private static String INFO_PATH = "simplePOG.txt";
-    //private static String JS_INFO = "createGroup1.js";
-    private static String charSetName = "utf-8";
+    final int max_entry = 1000;
+    final int max_label = 60;
+    protected static String INFO_PATH = "POIs.txt";
+    protected static String charSetName = "utf-8";
+    protected double[][] logLat= new double[max_entry][2];
+    protected int[][] label = new int[max_entry][max_label];
 
-    double[][] logLat= new double[702][2];
-    int[][] lable = new int[702][52];
-    //private ArrayList<Integer> lable = new ArrayList<Integer>();
+    DataRead() {
+
+    }
+
+    DataRead(String info_path) {
+        INFO_PATH = info_path;
+    }
 
     void init() {
-        for(int i = 0; i < lable.length; i++)
-            for(int j = 0; j < lable[i].length; j++)
-                lable[i][j] = -1;
+        for(int i = 0; i < label.length; i++)
+            for(int j = 0; j < label[i].length; j++)
+                label[i][j] = -1;
+    }
+
+    boolean isExist(int l, int[] lab) {
+        for(int i = 0; i < lab.length; i++)
+            if(l == lab[i]) return true;
+
+        return false;
     }
 
     double round(double value, int scale, int roundingMode) {
@@ -39,14 +49,6 @@ class DataRead {
         return d;
     }
 
-    boolean isExist(int l, int[] lab) {
-        for(int i = 0; i < lab.length; i++) {
-            if(l == lab[i]) return true;
-        }
-        return false;
-    }
-
-    //以info[i][4]为一个组读取数据
     public List<String[]> readPOG(List<String[]> POGList) throws IOException {
 
         File f = new File(INFO_PATH);
@@ -61,42 +63,45 @@ class DataRead {
         int flag2 = 0;
 
         double sum = 0;
-        int loglatCount = 0;
+        int logLatCount = 0;
         int count = 0;
 
-        int lableCount1 = 0;
-        int lableCount2 = 0;
-        int tmpLable = -1;
+        int labelCount1 = 0;
+        int labelCount2 = 0;
+        int tempLabel;
 
         init();
+
+        String tmp = "";
 
         while ((line = reader.readLine()) != null) {
             String[] data = line.split(" +");
             if(!flag_read) {
                 if(!flag_firstLine) {
                     flag1 = Integer.parseInt(data[4]);
-                    tmpLable = Integer.parseInt(data[3]);
+                    tempLabel = Integer.parseInt(data[3]);
 
                     sum += Double.parseDouble(data[0]);
-                    logLat[loglatCount][0] = Double.parseDouble(data[1]);
+                    logLat[logLatCount][0] = Double.parseDouble(data[1]);
                     count++;
 
-                    if(!isExist(tmpLable, lable[lableCount1]))
-                        lable[lableCount1][lableCount2 ++] = tmpLable;
+                    if(!isExist(tempLabel, label[labelCount1]))
+                        label[labelCount1][labelCount2++] = tempLabel;
+
 
                     POGTmp.add(data[2]);
                     flag_read = true;
                 }
                 else {
                     flag1 = Integer.parseInt(data[4]);
-                    tmpLable = Integer.parseInt(data[3]);
+                    tempLabel = Integer.parseInt(data[3]);
                     if (flag2 == flag1) {
                         sum += Double.parseDouble(data[0]);
-                        logLat[loglatCount][0] = Double.parseDouble(data[1]);
+                        logLat[logLatCount][0] = Double.parseDouble(data[1]);
                         count++;
 
-                        if(!isExist(tmpLable, lable[lableCount1]))
-                            lable[lableCount1][lableCount2 ++] = tmpLable;
+                        if(!isExist(tempLabel, label[labelCount1]))
+                            label[labelCount1][labelCount2++] = tempLabel;
 
                         POGTmp.add(data[2]);
                         flag_read = true;
@@ -105,17 +110,16 @@ class DataRead {
                         flag_read = false;
                         POGTmp.clear();
 
-                        logLat[loglatCount++][1] = round(sum / count, 4,
+                        logLat[logLatCount++][1] = round(sum / count, 4,
                                 BigDecimal.ROUND_HALF_DOWN);
                         sum =0;
                         count = 0;
 
-                        System.out.println(lableCount1 + ": " + lableCount2);
-                        lableCount1++;
-                        lableCount2 = 0;
-                        if(!isExist(tmpLable, lable[lableCount1]))
-                            lable[lableCount1][lableCount2 ++] = tmpLable;
-
+                        System.out.println(labelCount1 + ": " + labelCount2);
+                        labelCount1++;
+                        labelCount2 = 0;
+                        if(!isExist(tempLabel, label[labelCount1]))
+                            label[labelCount1][labelCount2++] = tempLabel;
 
                         POGTmp.add(data[2]);
                         POGList.add(POG);
@@ -127,42 +131,41 @@ class DataRead {
 
             } else {
                 flag2 = Integer.parseInt(data[4]);
-                tmpLable = Integer.parseInt(data[3]);
+                tempLabel = Integer.parseInt(data[3]);
 
                 if (flag1 != flag2) {
                     String[] POG = (String[]) POGTmp.toArray(new String[0]);
                     flag_read = false;
                     POGTmp.clear();
 
-                    logLat[loglatCount++][1] = round(sum / count, 4,
+                    logLat[logLatCount++][1] = round(sum / count, 4,
                             BigDecimal.ROUND_HALF_DOWN);
                     sum = 0;
                     count = 0;
 
-                    System.out.println(lableCount1 + ": " + lableCount2);
-
-                    lableCount1++;
-                    lableCount2 = 0;
-                    if(!isExist(tmpLable, lable[lableCount1]))
-                        lable[lableCount1][lableCount2 ++] = tmpLable;
+                    labelCount1++;
+                    labelCount2 = 0;
+                    if(!isExist(tempLabel, label[labelCount1]))
+                        label[labelCount1][labelCount2++] = tempLabel;
 
                     POGTmp.add(data[2]);
                     POGList.add(POG);
                 } else {
                     sum += Double.parseDouble(data[0]);
-                    logLat[loglatCount][0] = Double.parseDouble(data[1]);
+                    logLat[logLatCount][0] = Double.parseDouble(data[1]);
                     count++;
 
-                    if(!isExist(tmpLable, lable[lableCount1]))
-                        lable[lableCount1][lableCount2 ++] = tmpLable;
+                    if(!isExist(tempLabel, label[labelCount1]))
+                        label[labelCount1][labelCount2++] = tempLabel;
 
                     POGTmp.add(data[2]);
                 }
             }
         }
-        logLat[loglatCount++][1] = sum / count;
+        logLat[logLatCount][1] = round(sum / count, 4,
+                BigDecimal.ROUND_HALF_DOWN);
 
-        String[] POG = (String[]) POGTmp.toArray(new String[0]);
+        String[] POG = (String[]) POGTmp.toArray(new String[POGTmp.size()]);
         POGTmp.clear();
         POGList.add(POG);
         reader.close();

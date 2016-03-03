@@ -10,50 +10,74 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class TopicExtract {
 
     public static void main(String[] args) throws IOException{
-        File file = new File("target.txt");
-        BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(
-                new FileOutputStream(file), "UTF-8"));
-        writer.write("var POGkw = new Array();\n");
 
-        File file1 = new File("label.txt");
-        BufferedWriter writer1 = new BufferedWriter(new OutputStreamWriter(
-                new FileOutputStream(file1), "UTF-8"));
-        writer1.write("var label = new Array();\n");
+        DataRead dr;
 
-        String dictionary = new String("街路号里营区门环");
+        String dictionary = "街路号里营区门环";
         double initRadio = 0.5;
-        DataRead dr = new DataRead();
-        List<String[]> POGList = new ArrayList<>();
 
+        if(args.length > 0)
+            dr = new DataRead(args[0]);
+        else dr = new DataRead();
+
+        File insertTopic = new File("sql/insert_topic.sql");
+        BufferedWriter writerTopic = new BufferedWriter(new OutputStreamWriter(
+                new FileOutputStream(insertTopic), "UTF-8"));
+
+        File insertLabel = new File("sql/insert_label.sql");
+        BufferedWriter writerLabel = new BufferedWriter(new OutputStreamWriter(
+                new FileOutputStream(insertLabel), "UTF-8"));
+
+        List<String[]> POGList = new ArrayList<>();
         POGList = dr.readPOG(POGList);
 
-        int count = 0;
-        for(int i = 0; i < POGList.size(); i++) {
-            KeyWordExtract test = new KeyWordExtract(POGList.get(i), dictionary, initRadio);
-            String kw = test.keyWord();
-            writer.write("POGkw[" + i + "] = [" + dr.logLat[i][0] + ", " + dr.logLat[i][1] + ", '" + kw +  "'];\n");
+        writerTopic.write("INSERT INTO `POG`.`Topic` VALUES ");
+        writerLabel.write("INSERT INTO `POG`.`Label` VALUES ");
 
-            writer1.write("label[" + i + "] = [");
-            for(int j = 1; j < dr.lable[i].length; j++) {
-                if(dr.lable[i][j] != -1)
-                    writer1.write(dr.lable[i][j - 1] + ", ");
+        for(int i = 0; i < POGList.size(); i++) {
+            KeyWordExtract test = new KeyWordExtract(POGList.get(i),
+                    dictionary, initRadio);
+            String kw = test.keyWord();
+
+            String temp = "";
+            for(int j = 1; j < dr.label[i].length; j++) {
+                if(dr.label[i][j] != -1) {
+                    temp += dr.label[i][j - 1] + " ";
+                }
                 else {
-                    writer1.write(dr.lable[i][j - 1] + "];\n");
+                    temp += dr.label[i][j - 1];
+                    if(i == 0)
+                        writerLabel.write("('" + i  + "', '" + temp + "')");
+                    else
+                        writerLabel.write(",\n ('" + i  + "', '" + temp + "')");
                    break;
                 }
             }
-////            for(int j = 0; j < POGList.get(i).length; j++) {
-//                System.out.println("info[" + i + "][" + j + "]:" + POGList.get(i)[j]);
-//                count++;
-//            }
+
+            if(i == 0)
+                writerTopic.write("('" + i + "', '" + dr.logLat[i][0] +
+                        "', '" + dr.logLat[i][1] + "', '" + kw +"')");
+            else
+                writerTopic.write(",\n ('" + i + "', '" + dr.logLat[i][0] +
+                        "', '" + dr.logLat[i][1] + "', '" + kw +"')");
         }
-        writer.close();
-        writer1.close();
-        System.out.println(count);
+        writerTopic.write(";");
+        writerLabel.write(";");
+
+        writerLabel.close();
+        writerTopic.close();
+
+        Node info;
+        if(args.length > 0) {
+            info = new Node(args[0]);
+        }
+        else
+            info = new Node();
+
+        info.createNode();
     }
 }
 

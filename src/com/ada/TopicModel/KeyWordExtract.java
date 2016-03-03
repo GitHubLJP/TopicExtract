@@ -5,6 +5,7 @@ import java.util.Random;
 
 /**
  * Created by ljp on 12/21/15.
+ *
  */
 
 public class KeyWordExtract {
@@ -86,9 +87,8 @@ public class KeyWordExtract {
         int  countCommonChar;
 
         for(int i = str1.length() - 1; i >= 0; i--) {
+
             //Init var in loop
-            beginIndex = 0;
-            endIndex = 0;
             countCommonChar = 0;
             for (int j = str2.length() - 1; j >= 0; j--) {
                 if (!isFeature(str1.charAt(i)) && str1.charAt(i) == str2.charAt(j)) {
@@ -124,13 +124,12 @@ public class KeyWordExtract {
     }
 
     String keyWord() {
-        String goal = null;
+        String goal;
         Random random = new Random();
         int sampleNumber = (int)Math.ceil(POG.length * initRadit);
         sampleNumber /= 2;
 
-        double radioMax = 0;
-        ArrayList<String> POGTmp = new ArrayList<String>();
+        ArrayList<String> POGTmp = new ArrayList<>();
         //System.out.println(sampleNumber);
 
         if(POG.length <= 2) {
@@ -139,31 +138,17 @@ public class KeyWordExtract {
         for(int i = 0; i < sampleNumber; i++) {
             int randomIndex1 = Math.abs(random.nextInt()) % POG.length;
             int randomIndex2 = Math.abs(random.nextInt()) % POG.length;
-//            System.out.println("random1: " + randomIndex1 + " " + "radom2: " + randomIndex2);
+
             String sampleString1 = POG[randomIndex1];
             String sampleString2 = POG[randomIndex2];
-
 
             //逆序求出最近相同字串
             String tmp = comStr(sampleString1, sampleString2);
             POGTmp.add(tmp);
-//            int countKeyWord = 0;
-//            for(int j = 0; j < POG.length; j++) {
-//                if(tmp != null) {
-//                    if (POG[j].indexOf(tmp) != -1)
-//                        countKeyWord++;
-//                } else break;
-//            }
-//            if((countKeyWord * 1.0) / POG.length > radioMax) {
-//                radioMax= (countKeyWord * 1.0) / POG.length;Ggit
-//                goal = tmp;
-//            }
         }
-        String[] group = (String[])POGTmp.toArray(new String[0]);
-
+        String[] group = POGTmp.toArray(new String[0]);
         goal = groupExtract(group);
 
         return goal;
     }
-
 }
