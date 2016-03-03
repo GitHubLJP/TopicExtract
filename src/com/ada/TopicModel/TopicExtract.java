@@ -14,14 +14,24 @@ public class TopicExtract {
 
     public static void main(String[] args) throws IOException{
 
+        System.out.println("Begin Extracting Topic of POIs...");
+
         DataRead dr;
+        Node info;
 
         String dictionary = "街路号里营区门环";
         double initRadio = 0.5;
 
-        if(args.length > 0)
+        if(args.length > 0) {
             dr = new DataRead(args[0]);
-        else dr = new DataRead();
+            info = new Node(args[0]);
+        }
+        else {
+            info = new Node();
+            dr = new DataRead();
+        }
+
+        info.createNode();
 
         File insertTopic = new File("sql/insert_topic.sql");
         BufferedWriter writerTopic = new BufferedWriter(new OutputStreamWriter(
@@ -70,14 +80,8 @@ public class TopicExtract {
         writerLabel.close();
         writerTopic.close();
 
-        Node info;
-        if(args.length > 0) {
-            info = new Node(args[0]);
-        }
-        else
-            info = new Node();
+        System.out.println("End Extracting Topic of POIs!");
 
-        info.createNode();
     }
 }
 
