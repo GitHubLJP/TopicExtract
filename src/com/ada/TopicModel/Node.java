@@ -49,6 +49,7 @@ public class Node {
                 count = 0;
 
                 if(count + i == 0)  {
+                    System.out.println("Create insert_info.sql/...");
                     writerInfo.write("('" + data[4] + "', '" +  data[0] + "', '" +
                             data[1] + "', '" + data[2] + "', '" + data[3] + "')");
                 } else {

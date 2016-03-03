@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="TopictiExtract:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/TopictiExtract_jar</output-path>
+    <root id="archive" name="TopictiExtract.jar">
+      <element id="module-output" name="TopictiExtract" />
+    </root>
+  </artifact>
+</component>

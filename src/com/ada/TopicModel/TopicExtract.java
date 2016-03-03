@@ -16,6 +16,12 @@ public class TopicExtract {
 
         System.out.println("Begin Extracting Topic of POIs...");
 
+        File file =new File("sql/");
+        if  (!file.exists()  && !file.isDirectory()){
+            System.out.println("MkDir sql/...");
+            file .mkdir();
+        }
+
         DataRead dr;
         Node info;
 
@@ -47,12 +53,14 @@ public class TopicExtract {
         writerTopic.write("INSERT INTO `POG`.`Topic` VALUES ");
         writerLabel.write("INSERT INTO `POG`.`Label` VALUES ");
 
+        System.out.println("Create insert_label.sql/...");
         for(int i = 0; i < POGList.size(); i++) {
             KeyWordExtract test = new KeyWordExtract(POGList.get(i),
                     dictionary, initRadio);
             String kw = test.keyWord();
 
             String temp = "";
+
             for(int j = 1; j < dr.label[i].length; j++) {
                 if(dr.label[i][j] != -1) {
                     temp += dr.label[i][j - 1] + " ";
@@ -67,9 +75,12 @@ public class TopicExtract {
                 }
             }
 
-            if(i == 0)
+            if(i == 0) {
+                System.out.println("Create insert_topic.sql/...");
                 writerTopic.write("('" + i + "', '" + dr.logLat[i][0] +
                         "', '" + dr.logLat[i][1] + "', '" + kw +"')");
+            }
+
             else
                 writerTopic.write(",\n ('" + i + "', '" + dr.logLat[i][0] +
                         "', '" + dr.logLat[i][1] + "', '" + kw +"')");
