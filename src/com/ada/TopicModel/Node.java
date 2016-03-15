@@ -40,7 +40,7 @@ public class Node {
         String line;
         int flag = -1;
         int count = 0;
-        writerInfo.write(" INSERT INTO `POG`.`Info`  VALUES ");
+        writerInfo.write(" INSERT INTO `OPG`.`Info`  VALUES ");
         while ((line = reader.readLine()) != null) {
             String[] data = line.split(" ");
             if(Integer.parseInt(data[4]) != flag) {

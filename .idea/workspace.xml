@@ -10,9 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a8a7cce5-9956-4916-a353-06aeea26a1f4" name="Default" comment="Add log and lat info to POGkw">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TopictiExtract/com/ada/TopicModel/Node.class" afterPath="$PROJECT_DIR$/out/production/TopictiExtract/com/ada/TopicModel/Node.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TopictiExtract/com/ada/TopicModel/TopicExtract.class" afterPath="$PROJECT_DIR$/out/production/TopictiExtract/com/ada/TopicModel/TopicExtract.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sql/insert_info.sql" afterPath="$PROJECT_DIR$/sql/insert_info.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sql/insert_label.sql" afterPath="$PROJECT_DIR$/sql/insert_label.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sql/insert_topic.sql" afterPath="$PROJECT_DIR$/sql/insert_topic.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/ada/TopicModel/Node.java" afterPath="$PROJECT_DIR$/src/com/ada/TopicModel/Node.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/ada/TopicModel/TopicExtract.java" afterPath="$PROJECT_DIR$/src/com/ada/TopicModel/TopicExtract.java" />
@@ -40,8 +40,8 @@
       <file leaf-file-name="TopicExtract.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/ada/TopicModel/TopicExtract.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2657856">
-              <caret line="59" column="39" selection-start-line="59" selection-start-column="39" selection-end-line="59" selection-end-column="39" />
+            <state vertical-scroll-proportion="0.68575627">
+              <caret line="83" column="16" selection-start-line="83" selection-start-column="16" selection-end-line="83" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -53,11 +53,8 @@
         <entry file="file://$PROJECT_DIR$/src/com/ada/TopicModel/Node.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-              <folding>
-                <element signature="e#436#437#0" expanded="true" />
-                <element signature="e#469#470#0" expanded="true" />
-              </folding>
+              <caret line="42" column="63" selection-start-line="42" selection-start-column="63" selection-end-line="42" selection-end-column="63" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -70,8 +67,6 @@
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;class#DataRead#0" expanded="false" />
-                <element signature="e#680#681#0" expanded="true" />
-                <element signature="e#717#718#0" expanded="true" />
                 <element signature="method#init#0;class#DataRead#0" expanded="false" />
                 <element signature="method#isExist#0;class#DataRead#0" expanded="false" />
                 <element signature="method#round#0;class#DataRead#0" expanded="false" />
@@ -147,9 +142,8 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="960" />
     <option name="y" value="27" />
-    <option name="width" value="960" />
+    <option name="width" value="1920" />
     <option name="height" value="1053" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -604,7 +598,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="960" y="27" width="960" height="1053" extended-state="4" />
+    <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -614,12 +608,10 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2241567" sideWeight="0.50877196" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32959402" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2241567" sideWeight="0.49122807" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2241567" sideWeight="0.49122807" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29714912" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -629,6 +621,8 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -694,6 +688,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ada/TopicModel/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ada/TopicModel/DataRead.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#DataRead#0" expanded="false" />
+            <element signature="method#init#0;class#DataRead#0" expanded="false" />
+            <element signature="method#isExist#0;class#DataRead#0" expanded="false" />
+            <element signature="method#round#0;class#DataRead#0" expanded="false" />
+            <element signature="method#readPOG#0;class#DataRead#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ada/TopicModel/KeyWordExtract.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <element signature="method#isLeftBracket#0;class#KeyWordExtract#0" expanded="false" />
+            <element signature="method#isRightBracket#0;class#KeyWordExtract#0" expanded="false" />
+            <element signature="method#isInDictionary#0;class#KeyWordExtract#0" expanded="false" />
+            <element signature="method#isEndCompare#0;class#KeyWordExtract#0" expanded="false" />
+            <element signature="method#groupExtract#0;class#KeyWordExtract#0" expanded="false" />
+            <element signature="method#comStr#0;class#KeyWordExtract#0" expanded="false" />
+            <element signature="method#keyWord#0;class#KeyWordExtract#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ada/TopicModel/TopicExtract.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ada/TopicModel/TopicExtract.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -711,8 +754,6 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;class#DataRead#0" expanded="false" />
-            <element signature="e#680#681#0" expanded="true" />
-            <element signature="e#717#718#0" expanded="true" />
             <element signature="method#init#0;class#DataRead#0" expanded="false" />
             <element signature="method#isExist#0;class#DataRead#0" expanded="false" />
             <element signature="method#round#0;class#DataRead#0" expanded="false" />
@@ -754,8 +795,6 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;class#DataRead#0" expanded="false" />
-            <element signature="e#680#681#0" expanded="true" />
-            <element signature="e#717#718#0" expanded="true" />
             <element signature="method#init#0;class#DataRead#0" expanded="false" />
             <element signature="method#isExist#0;class#DataRead#0" expanded="false" />
             <element signature="method#round#0;class#DataRead#0" expanded="false" />
@@ -797,8 +836,6 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;class#DataRead#0" expanded="false" />
-            <element signature="e#680#681#0" expanded="true" />
-            <element signature="e#717#718#0" expanded="true" />
             <element signature="method#init#0;class#DataRead#0" expanded="false" />
             <element signature="method#isExist#0;class#DataRead#0" expanded="false" />
             <element signature="method#round#0;class#DataRead#0" expanded="false" />
@@ -840,8 +877,6 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;class#DataRead#0" expanded="false" />
-            <element signature="e#680#681#0" expanded="true" />
-            <element signature="e#717#718#0" expanded="true" />
             <element signature="method#init#0;class#DataRead#0" expanded="false" />
             <element signature="method#isExist#0;class#DataRead#0" expanded="false" />
             <element signature="method#round#0;class#DataRead#0" expanded="false" />
@@ -890,8 +925,6 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;class#DataRead#0" expanded="false" />
-            <element signature="e#680#681#0" expanded="true" />
-            <element signature="e#717#718#0" expanded="true" />
             <element signature="method#init#0;class#DataRead#0" expanded="false" />
             <element signature="method#isExist#0;class#DataRead#0" expanded="false" />
             <element signature="method#round#0;class#DataRead#0" expanded="false" />
@@ -917,8 +950,6 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;class#DataRead#0" expanded="false" />
-            <element signature="e#680#681#0" expanded="true" />
-            <element signature="e#717#718#0" expanded="true" />
             <element signature="method#init#0;class#DataRead#0" expanded="false" />
             <element signature="method#isExist#0;class#DataRead#0" expanded="false" />
             <element signature="method#round#0;class#DataRead#0" expanded="false" />
@@ -944,8 +975,6 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;class#DataRead#0" expanded="false" />
-            <element signature="e#680#681#0" expanded="true" />
-            <element signature="e#717#718#0" expanded="true" />
             <element signature="method#init#0;class#DataRead#0" expanded="false" />
             <element signature="method#isExist#0;class#DataRead#0" expanded="false" />
             <element signature="method#round#0;class#DataRead#0" expanded="false" />
@@ -987,8 +1016,6 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;class#DataRead#0" expanded="false" />
-            <element signature="e#680#681#0" expanded="true" />
-            <element signature="e#717#718#0" expanded="true" />
             <element signature="method#init#0;class#DataRead#0" expanded="false" />
             <element signature="method#isExist#0;class#DataRead#0" expanded="false" />
             <element signature="method#round#0;class#DataRead#0" expanded="false" />
@@ -1030,8 +1057,6 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;class#DataRead#0" expanded="false" />
-            <element signature="e#680#681#0" expanded="true" />
-            <element signature="e#717#718#0" expanded="true" />
             <element signature="method#init#0;class#DataRead#0" expanded="false" />
             <element signature="method#isExist#0;class#DataRead#0" expanded="false" />
             <element signature="method#round#0;class#DataRead#0" expanded="false" />
@@ -1073,8 +1098,6 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;class#DataRead#0" expanded="false" />
-            <element signature="e#680#681#0" expanded="true" />
-            <element signature="e#717#718#0" expanded="true" />
             <element signature="method#init#0;class#DataRead#0" expanded="false" />
             <element signature="method#isExist#0;class#DataRead#0" expanded="false" />
             <element signature="method#round#0;class#DataRead#0" expanded="false" />
@@ -1126,8 +1149,6 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;class#DataRead#0" expanded="false" />
-            <element signature="e#680#681#0" expanded="true" />
-            <element signature="e#717#718#0" expanded="true" />
             <element signature="method#init#0;class#DataRead#0" expanded="false" />
             <element signature="method#isExist#0;class#DataRead#0" expanded="false" />
             <element signature="method#round#0;class#DataRead#0" expanded="false" />
@@ -1197,23 +1218,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ada/TopicModel/DataRead.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#DataRead#0" expanded="false" />
-            <element signature="e#680#681#0" expanded="true" />
-            <element signature="e#717#718#0" expanded="true" />
-            <element signature="method#init#0;class#DataRead#0" expanded="false" />
-            <element signature="method#isExist#0;class#DataRead#0" expanded="false" />
-            <element signature="method#round#0;class#DataRead#0" expanded="false" />
-            <element signature="method#readPOG#0;class#DataRead#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ada/TopicModel/KeyWordExtract.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1230,21 +1234,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ada/TopicModel/DataRead.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#DataRead#0" expanded="false" />
+            <element signature="method#init#0;class#DataRead#0" expanded="false" />
+            <element signature="method#isExist#0;class#DataRead#0" expanded="false" />
+            <element signature="method#round#0;class#DataRead#0" expanded="false" />
+            <element signature="method#readPOG#0;class#DataRead#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ada/TopicModel/Node.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding>
-            <element signature="e#436#437#0" expanded="true" />
-            <element signature="e#469#470#0" expanded="true" />
-          </folding>
+          <caret line="42" column="63" selection-start-line="42" selection-start-column="63" selection-end-line="42" selection-end-column="63" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ada/TopicModel/TopicExtract.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2657856">
-          <caret line="59" column="39" selection-start-line="59" selection-start-column="39" selection-end-line="59" selection-end-column="39" />
+        <state vertical-scroll-proportion="0.68575627">
+          <caret line="83" column="16" selection-start-line="83" selection-start-column="16" selection-end-line="83" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

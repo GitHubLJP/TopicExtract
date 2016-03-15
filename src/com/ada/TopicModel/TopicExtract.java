@@ -50,8 +50,8 @@ public class TopicExtract {
         List<String[]> POGList = new ArrayList<>();
         POGList = dr.readPOG(POGList);
 
-        writerTopic.write("INSERT INTO `POG`.`Topic` VALUES ");
-        writerLabel.write("INSERT INTO `POG`.`Label` VALUES ");
+        writerTopic.write("INSERT INTO `OPG`.`Topic` VALUES ");
+        writerLabel.write("INSERT INTO `OPG`.`Label` VALUES ");
 
         System.out.println("Create insert_label.sql/...");
         for(int i = 0; i < POGList.size(); i++) {
